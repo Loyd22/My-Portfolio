@@ -1,0 +1,10 @@
+<svg width="400" height="280" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="280" rx="16" fill="#0B1220"/>
+  <rect x="24" y="24" width="352" height="232" rx="12" fill="#1D2740"/>
+  <rect x="42" y="42" width="84" height="84" rx="8" fill="#C4B5FD"/>
+  <rect x="138" y="42" width="220" height="12" rx="6" fill="#E2E8F0"/>
+  <rect x="138" y="62" width="156" height="10" rx="5" fill="#94A3B8"/>
+  <rect x="138" y="82" width="188" height="10" rx="5" fill="#94A3B8"/>
+  <rect x="42" y="142" width="316" height="94" rx="10" fill="#111827"/>
+  <text x="200" y="193" text-anchor="middle" fill="#A78BFA" font-family="Arial, sans-serif" font-size="14">Replace with Build Photo</text>
+</svg>

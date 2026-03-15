@@ -1,0 +1,18 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="20" y1="18" x2="295" y2="298" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1B2436"/>
+      <stop offset="1" stop-color="#0E1320"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="37" y1="33" x2="266" y2="267" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8E7CFF"/>
+      <stop offset="1" stop-color="#5B4BF8"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="24" fill="url(#bg)"/>
+  <rect x="38" y="34" width="244" height="244" rx="122" fill="#202C43" stroke="url(#ring)" stroke-width="4"/>
+  <path d="M159.5 104C181.867 104 200 122.133 200 144.5C200 166.867 181.867 185 159.5 185C137.133 185 119 166.867 119 144.5C119 122.133 137.133 104 159.5 104Z" fill="#94A7C8"/>
+  <path d="M87 253C87 216.549 116.549 187 153 187H166C202.451 187 232 216.549 232 253V254H87V253Z" fill="#94A7C8"/>
+  <rect x="25" y="263" width="270" height="34" rx="8" fill="#111827"/>
+  <text x="160" y="285" text-anchor="middle" fill="#8E7CFF" font-family="Arial, sans-serif" font-weight="700" font-size="18">LOYD</text>
+</svg>
