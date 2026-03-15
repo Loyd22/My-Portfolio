@@ -15,7 +15,7 @@ export default async function Home() {
         <article className="resume-paper rounded-2xl p-4 sm:p-5 lg:p-7">
           <header className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#1e263611] pb-4">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#1a2234]">
-              Loyd Portfolio Resume
+              Loyd Portfolio
             </p>
             <nav aria-label="Section links" className="flex flex-wrap items-center gap-2">
               <a

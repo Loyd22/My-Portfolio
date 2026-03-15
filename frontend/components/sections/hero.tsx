@@ -84,12 +84,10 @@ export function HeroSection() {
             <Github size={16} />
           </a>
           <a
-            href={portfolioData.contact.resume}
-            target="_blank"
-            rel="noreferrer"
+            href={portfolioData.contact.phone}
             className="inline-flex items-center gap-2 rounded-full border border-accent/35 bg-accent/10 px-5 py-2.5 text-sm font-semibold text-accent transition hover:border-accent/60 hover:bg-accent/20"
           >
-            Resume (Replace Link)
+            Call: 0929249953
           </a>
         </div>
       </motion.div>

@@ -1,4 +1,4 @@
-import { ArrowUpRight, Link2, Mail, Trophy } from "lucide-react";
+import { ArrowUpRight, Link2, Mail, Phone, Trophy } from "lucide-react";
 import type { PortfolioData } from "@/data/portfolio";
 import { Reveal } from "@/components/ui/reveal";
 import { ResumeSection } from "@/components/resume/resume-section";
@@ -127,7 +127,9 @@ export function LeftColumn({ data }: LeftColumnProps) {
                 <Link2 size={13} />
                 LinkedIn
               </span>
-              <span className="text-[11px] uppercase tracking-[0.08em] text-[#a94848]">Replace URL</span>
+              <span className="inline-flex items-center gap-1 text-[#4a5772] group-hover:text-[#4b41d5]">
+                Open <ArrowUpRight size={11} />
+              </span>
             </a>
             <a
               href={data.contact.email}
@@ -137,19 +139,19 @@ export function LeftColumn({ data }: LeftColumnProps) {
                 <Mail size={13} />
                 Email
               </span>
-              <span className="text-[11px] uppercase tracking-[0.08em] text-[#a94848]">Replace Email</span>
+              <span className="inline-flex items-center gap-1 text-[#4a5772] group-hover:text-[#4b41d5]">
+                Send <ArrowUpRight size={11} />
+              </span>
             </a>
             <a
-              href={data.contact.resume}
-              target="_blank"
-              rel="noreferrer"
+              href={data.contact.phone}
               className="group flex items-center justify-between rounded-lg border border-[#1d263811] bg-[#eef1f8] px-3 py-2 text-xs font-semibold text-[#172033]"
             >
               <span className="inline-flex items-center gap-2">
-                <Link2 size={13} />
-                Resume
+                <Phone size={13} />
+                Phone
               </span>
-              <span className="text-[11px] uppercase tracking-[0.08em] text-[#a94848]">Replace Link</span>
+              <span className="text-[11px] text-[#4a5772]">0929249953</span>
             </a>
           </div>
         </ResumeSection>

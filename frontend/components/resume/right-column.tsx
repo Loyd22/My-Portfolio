@@ -16,7 +16,7 @@ export function RightColumn({ data }: RightColumnProps) {
   const [selectedProject, setSelectedProject] = useState<PortfolioData["projects"][number] | null>(
     null
   );
-  const previewProjects = data.projects.slice(0, 2);
+  const previewProjects = data.projects.slice(0, 3);
 
   return (
     <>

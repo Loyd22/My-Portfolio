@@ -74,11 +74,11 @@ export function TopHeader({ data }: TopHeaderProps) {
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
             <div className="flex items-start gap-4">
               <Image
-                src="/profile-photo.svg"
+                src="/profile-photo.jpg"
                 alt="Profile placeholder for Loyd"
-                width={82}
-                height={82}
-                className="h-20 w-20 rounded-xl border border-[#161f320f] object-cover"
+                width={120}
+                height={120}
+                className="h-32 w-32 rounded-xl border border-[#161f320f] object-cover"
                 priority
               />
               <div className="min-w-0 flex-1">
@@ -111,7 +111,7 @@ export function TopHeader({ data }: TopHeaderProps) {
               </div>
             </div>
 
-            <div className="shrink-0 text-center">
+            <div className="shrink-0 text-center sm:mr-6">
               <button
                 type="button"
                 aria-label="Open AI chatbot"
@@ -122,9 +122,9 @@ export function TopHeader({ data }: TopHeaderProps) {
                 <Image
                   src="/image/chatbotimage-removebg-preview.png"
                   alt="Chatbot button image"
-                  width={122}
-                  height={122}
-                  className="block h-24 w-24 bg-transparent object-contain sm:h-28 sm:w-28"
+                  width={80}
+                  height={80}
+                  className="block h-15 w-15 bg-transparent object-contain sm:h-20 sm:w-20"
                 />
               </button>
               <p className="mt-1 text-[11px] font-semibold text-[#4b41d5]">Ask Me Anything</p>

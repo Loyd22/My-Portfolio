@@ -1,4 +1,4 @@
-import { FileText, Github, Linkedin, Mail, MessageSquareShare } from "lucide-react";
+import { Github, Linkedin, Mail, MessageSquareShare, Phone } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -14,23 +14,23 @@ const links = [
   {
     label: "LinkedIn",
     href: portfolioData.contact.linkedin,
-    value: "Replace with your LinkedIn URL",
+    value: "linkedin.com/in/loydviray/",
     icon: Linkedin,
-    placeholder: true
+    placeholder: false
   },
   {
     label: "Email",
     href: portfolioData.contact.email,
-    value: "Replace with your professional email",
+    value: "johnloydviray22@gmail.com",
     icon: Mail,
-    placeholder: true
+    placeholder: false
   },
   {
-    label: "Resume",
-    href: portfolioData.contact.resume,
-    value: "Replace with your resume link",
-    icon: FileText,
-    placeholder: true
+    label: "Phone",
+    href: portfolioData.contact.phone,
+    value: "0929249953",
+    icon: Phone,
+    placeholder: false
   }
 ];
 
@@ -61,12 +61,13 @@ export function ContactSection() {
       <div className="grid gap-4 sm:grid-cols-2">
         {links.map((link, index) => {
           const Icon = link.icon;
+          const isExternal = link.label !== "Email" && link.label !== "Phone";
           return (
             <Reveal key={link.label} delay={index * 0.06}>
               <a
                 href={link.href}
-                target={link.label === "Email" ? undefined : "_blank"}
-                rel={link.label === "Email" ? undefined : "noreferrer"}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noreferrer" : undefined}
                 className="block rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:border-accent/35 hover:bg-white/[0.055]"
               >
                 <div className="mb-3 flex items-center justify-between">

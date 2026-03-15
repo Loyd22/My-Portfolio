@@ -433,9 +433,9 @@ export const portfolioData = {
   ],
   contact: {
     github: "https://github.com/Loyd22",
-    linkedin: "https://www.linkedin.com/in/your-linkedin-handle", // TODO: replace
-    email: "mailto:your.email@example.com", // TODO: replace
-    resume: "https://your-domain.com/resume.pdf" // TODO: replace
+    linkedin: "https://www.linkedin.com/in/loydviray/",
+    email: "mailto:johnloydviray22@gmail.com",
+    phone: "tel:0929249953"
   }
 };
 
