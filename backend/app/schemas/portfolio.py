@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Literal, Optional
 
 from pydantic import BaseModel
 
@@ -16,6 +16,10 @@ class Project(BaseModel):
     highlights: List[str]
     stack: List[str]
     impact: str
+    repo: str
+    deploymentStatus: Literal["deployed", "not_deployed"]
+    deploymentUrl: Optional[str] = None
+    previewImage: Optional[str] = None
 
 
 class StackGroup(BaseModel):

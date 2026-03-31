@@ -3,7 +3,7 @@
     "fullName": "John Loyd Viray",
     "preferredName": "Loyd",
     "location": "Philippines",
-    "headline": "AI Engineer Intern | BSIT Student | Building AI-powered ERP/CRM automation",
+    "headline": "Software Developer Intern | AI/ML | Data Enthusiast",
     "rotatingRoles": [
       "AI Engineer Intern",
       "Full-Stack Developer",
@@ -183,7 +183,10 @@
         "Dockerized development and deployment-ready structure"
       ],
       "stack": ["FastAPI", "React", "TypeScript", "PostgreSQL", "SQLAlchemy", "Docker"],
-      "impact": "Built to mirror real client-style constraints and demonstrate full product ownership from database to UI."
+      "impact": "Built to mirror real client-style constraints and demonstrate full product ownership from database to UI.",
+      "repo": "https://github.com/Loyd22/AI-CRM-Assistant",
+      "deploymentStatus": "not_deployed",
+      "previewImage": "/gallery/work-4.svg"
     },
     {
       "title": "AI Customer Support Copilot (Memory + RAG + Tool Calling)",
@@ -195,10 +198,13 @@
         "Routing and escalation logic for safer support flow"
       ],
       "stack": ["FastAPI", "React", "LangChain", "LangGraph", "RAG", "Tool Calling"],
-      "impact": "Demonstrates multi-step orchestration and practical AI behavior beyond single-shot chatbot interactions."
+      "impact": "Demonstrates multi-step orchestration and practical AI behavior beyond single-shot chatbot interactions.",
+      "repo": "https://github.com/Loyd22/ai-customer-support-copilot-langchain",
+      "deploymentStatus": "not_deployed",
+      "previewImage": "/gallery/work-1.svg"
     },
     {
-      "title": "RAG Policy Assistant",
+      "title": "RAG-from-Scratch-Employee-Handbook-Policy-Assistant",
       "summary": "Document-aware assistant for employee handbook and policy use cases with retrieval quality and response trust as priorities.",
       "highlights": [
         "PDF ingestion, chunking, and embedding pipeline",
@@ -207,7 +213,10 @@
         "Backend API service integrated with frontend query flow"
       ],
       "stack": ["Python", "FastAPI", "RAG", "Embeddings", "Vector Search", "React"],
-      "impact": "Transforms static policy documents into usable operational knowledge for internal teams."
+      "impact": "Transforms static policy documents into usable operational knowledge for internal teams.",
+      "repo": "https://github.com/Loyd22/RAG-from-Scratch-Employee-Handbook-Policy-Assistant",
+      "deploymentStatus": "not_deployed",
+      "previewImage": "/gallery/work-2.svg"
     },
     {
       "title": "Credit Risk Predictor",
@@ -219,7 +228,90 @@
         "Deployment-aware thinking for real implementation constraints"
       ],
       "stack": ["Python", "Machine Learning", "Data Analysis", "Model Evaluation"],
-      "impact": "Showcases data and ML fundamentals with attention to reliability and real decision contexts."
+      "impact": "Showcases data and ML fundamentals with attention to reliability and real decision contexts.",
+      "repo": "https://github.com/Loyd22/credit-risk-predictor",
+      "deploymentStatus": "deployed",
+      "deploymentUrl": "https://loythee-credit-risk-analysis.hf.space/predict"
+    },
+    {
+      "title": "PUP Biñan Website",
+      "summary": "A modern university website built to manage institutional content through a CMS-powered admin system. It supports dynamic updates for news, announcements, images, videos, header, and footer content, moving beyond a static website into a more scalable and maintainable platform.",
+      "highlights": [
+        "CMS-driven content management for easier website updates",
+        "Admin-controlled sections for header, footer, images, videos, news, and announcements",
+        "Database-backed architecture instead of a static site",
+        "Built for scalability, maintainability, and easier content operations",
+        "Includes data analytics and visualization features for institutional insights"
+      ],
+      "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "CMS", "Database"],
+      "impact": "Creates a more professional, maintainable, and scalable web platform for PUP Biñan, with centralized content control and improved digital experience.",
+      "repo": "https://github.com/Loyd22/PUPBinanWebsite",
+      "deploymentStatus": "not_deployed",
+      "previewImage": "/portfolio_image/event4.jpg"
+    },
+    {
+      "title": "ML Bulldozer Price Prediction",
+      "summary": "A machine learning project focused on predicting bulldozer sale prices using historical equipment and auction data through an end-to-end regression workflow.",
+      "highlights": [
+        "End-to-end machine learning workflow for tabular regression",
+        "Data cleaning and preprocessing for structured equipment sales data",
+        "Feature engineering from historical bulldozer and auction records",
+        "Model training and evaluation for sale price prediction",
+        "Built as a practical portfolio project for applied machine learning"
+      ],
+      "stack": ["Python", "Jupyter Notebook", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
+      "impact": "Demonstrates practical machine learning skills by solving a real-world price prediction problem, from raw data preparation to predictive modeling and evaluation.",
+      "repo": "https://github.com/Loyd22/ml-Bulldozer-Price-Prediction",
+      "deploymentStatus": "not_deployed",
+      "previewImage": "/portfolio_image/event5.png"
+    },
+    {
+      "title": "LabLens-AI",
+      "summary": "An AI-powered web application that analyzes blood chemistry report images, extracts biomarker values, compares them against reference ranges, and generates understandable health insights.",
+      "highlights": [
+        "Upload and analyze blood chemistry report images",
+        "Extracts biomarker values from lab report images using AI",
+        "Compares results against reference ranges for quick interpretation",
+        "Tracks historical lab results and trends over time",
+        "Generates personalized lifestyle recommendations with medical disclaimer"
+      ],
+      "stack": ["Next.js", "GPT-4 Vision", "Prisma", "PostgreSQL", "AI Image Analysis"],
+      "impact": "Turns complex lab reports into a more understandable and user-friendly experience by combining image analysis, health data tracking, and AI-powered explanations in one system.",
+      "repo": "https://github.com/Loyd22/LabLens-AI",
+      "deploymentStatus": "not_deployed",
+      "previewImage": "/portfolio_image/event3.jpg"
+    },
+    {
+      "title": "Earthquake Fire Prediction ML",
+      "summary": "A machine learning project focused on predicting fire-related risk patterns using earthquake and environmental data through an end-to-end practical ML workflow.",
+      "highlights": [
+        "End-to-end machine learning workflow for disaster-related prediction",
+        "Data cleaning and preprocessing for structured environmental and event data",
+        "Feature analysis to identify patterns connected to fire risk",
+        "Model training and evaluation for predictive performance",
+        "Built as a practical project for real-world risk prediction use cases"
+      ],
+      "stack": ["Python", "Jupyter Notebook", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
+      "impact": "Demonstrates how machine learning can be applied to disaster and risk-related datasets to support data-driven analysis, prediction, and better understanding of possible fire-related outcomes.",
+      "repo": "https://github.com/Loyd22/Earthquakte_Fire_preds_ML",
+      "deploymentStatus": "not_deployed",
+      "previewImage": "/portfolio_image/event2.jpg"
+    },
+    {
+      "title": "ML Heart Disease Prediction",
+      "summary": "A machine learning project built to predict the likelihood of heart disease based on patient health-related data through a complete healthcare-focused classification workflow.",
+      "highlights": [
+        "End-to-end machine learning workflow for healthcare classification",
+        "Data cleaning and preprocessing of patient health data",
+        "Exploratory data analysis to understand patterns and risk factors",
+        "Model training and evaluation for heart disease prediction",
+        "Built as a practical project for real-world medical prediction use cases"
+      ],
+      "stack": ["Python", "Jupyter Notebook", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
+      "impact": "Demonstrates how machine learning can be used to support early risk assessment and predictive analysis in healthcare through structured patient data and classification modeling.",
+      "repo": "https://github.com/Loyd22/ML-heart-disease-prediction",
+      "deploymentStatus": "not_deployed",
+      "previewImage": "/portfolio_image/event1.jpg"
     }
   ],
   "hackathons": [
@@ -265,31 +357,33 @@
     }
   ],
   "experienceResume": [
-    {
-      "role": "AI Engineer Intern",
-      "track": "Practical AI engineering",
-      "year": "Current",
-      "summary": "Contributing to ERP/CRM automation features with backend APIs, workflow logic, and production-minded architecture."
-    },
-    {
-      "role": "Aspiring Full-Stack Developer",
-      "track": "End-to-end delivery",
-      "year": "Ongoing",
-      "summary": "Building complete systems across React + TypeScript frontend, FastAPI backend, and PostgreSQL data models."
-    },
-    {
-      "role": "Software Engineering Builder",
-      "track": "Portfolio execution",
-      "year": "2025",
-      "summary": "Shipped project implementations for CRM workflows, RAG support assistants, and ML-oriented business use cases."
-    },
-    {
-      "role": "BSIT Student",
-      "track": "Academic progression",
-      "year": "Expected graduation: October 2026",
-      "summary": "Completing Information Technology degree at Polytechnic University of the Philippines (PUP) Binan Campus."
-    }
-  ],
+
+  {
+    "role": "BSIT Bachelor Graduate",
+    "track": "Academic achievement",
+    "year": "2026",
+    "summary": "Completing a Bachelor of Science in Information Technology at Polytechnic University of the Philippines (PUP) Binan Campus."
+  },
+  {
+    "role": "Software Developer Intern",
+    "track": "Professional experience",
+    "year": "2026",
+    "summary": "Gaining hands-on industry experience in software development, building real-world systems, and improving practical coding skills."
+  },
+  
+  {
+    "role": "Hello World",
+    "track": "The start of my coding journey",
+    "year": "2022",
+    "summary": "Began my coding journey by learning the fundamentals of programming and exploring how software is built."
+  },
+  {
+    "role": "McDonald's Crew",
+    "track": "Work experience",
+    "year": "2021",
+    "summary": "Worked as a crew member at McDonald's, developing teamwork, communication, discipline, and customer service skills in a fast-paced environment."
+  }
+],
   "recommendations": [
     {
       "title": "What I value in my work",
@@ -319,11 +413,11 @@
     }
   ],
   "gallery": [
-    { "src": "/gallery/work-1.svg", "alt": "Project snapshot placeholder 1" },
-    { "src": "/gallery/work-2.svg", "alt": "Project snapshot placeholder 2" },
-    { "src": "/gallery/work-3.svg", "alt": "Project snapshot placeholder 3" },
-    { "src": "/gallery/work-4.svg", "alt": "Project snapshot placeholder 4" },
-    { "src": "/gallery/work-5.svg", "alt": "Project snapshot placeholder 5" }
+    { "src": "/portfolio_image/event1.jpg", "alt": "Event photo 1" },
+    { "src": "/portfolio_image/event2.jpg", "alt": "Event photo 2" },
+    { "src": "/portfolio_image/event3.jpg", "alt": "Event photo 3" },
+    { "src": "/portfolio_image/event4.jpg", "alt": "Event photo 4" },
+    { "src": "/portfolio_image/event5.png", "alt": "Event photo 5" }
   ],
   "learning": [
     {

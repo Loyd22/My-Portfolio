@@ -7,9 +7,12 @@ const API_BASE_URL =
 
 export async function getPortfolioData(): Promise<PortfolioData> {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/portfolio`, {
-      next: { revalidate: 300 }
-    });
+    const response = await fetch(
+      `${API_BASE_URL}/api/portfolio`,
+      process.env.NODE_ENV === "development"
+        ? { cache: "no-store" }
+        : { next: { revalidate: 300 } }
+    );
 
     if (!response.ok) {
       throw new Error(`Portfolio API failed with status ${response.status}`);
