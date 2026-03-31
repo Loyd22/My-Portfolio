@@ -15,6 +15,7 @@ export type Project = {
   deploymentStatus: "deployed" | "not_deployed";
   deploymentUrl?: string;
   previewImage?: string;
+  previewImages?: string[];
 };
 
 export type StackGroup = {
@@ -253,7 +254,10 @@ export const portfolioData = {
         "Built to mirror real client-style constraints and demonstrate full product ownership from database to UI.",
       repo: "https://github.com/Loyd22/AI-CRM-Assistant",
       deploymentStatus: "not_deployed",
-      previewImage: "/gallery/work-4.svg"
+      previewImages: [
+        "/portfolio_image/ai-crm-assistant1.png",
+        "/portfolio_image/ai-crm-assistant2.png"
+      ]
     },
     {
       title: "AI Customer Support Copilot (Memory + RAG + Tool Calling)",
@@ -277,7 +281,10 @@ export const portfolioData = {
         "Demonstrates multi-step orchestration and practical AI behavior beyond single-shot chatbot interactions.",
       repo: "https://github.com/Loyd22/ai-customer-support-copilot-langchain",
       deploymentStatus: "not_deployed",
-      previewImage: "/gallery/work-1.svg"
+      previewImages: [
+        "/portfolio_image/ai-customer-copilot1.png",
+        "/portfolio_image/ai-customer-copilot2.png"
+      ]
     },
     {
       title: "RAG-from-Scratch-Employee-Handbook-Policy-Assistant",
@@ -294,7 +301,7 @@ export const portfolioData = {
         "Transforms static policy documents into usable operational knowledge for internal teams.",
       repo: "https://github.com/Loyd22/RAG-from-Scratch-Employee-Handbook-Policy-Assistant",
       deploymentStatus: "not_deployed",
-      previewImage: "/gallery/work-2.svg"
+      previewImages: ["/portfolio_image/ragfromscratch1.png"]
     },
     {
       title: "Credit Risk Predictor",

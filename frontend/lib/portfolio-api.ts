@@ -19,7 +19,27 @@ export async function getPortfolioData(): Promise<PortfolioData> {
     }
 
     const payload = (await response.json()) as PortfolioData;
-    return payload;
+    const localProjectByTitle = new Map(
+      portfolioData.projects.map((project) => [project.title, project])
+    );
+    const mergedProjects = payload.projects.map((project) => {
+      const localProject = localProjectByTitle.get(project.title);
+      const hasPreviewImages = Array.isArray(project.previewImages) && project.previewImages.length > 0;
+
+      if (hasPreviewImages || !localProject?.previewImages?.length) {
+        return project;
+      }
+
+      return {
+        ...project,
+        previewImages: localProject.previewImages
+      };
+    });
+
+    return {
+      ...payload,
+      projects: mergedProjects
+    };
   } catch {
     // Fallback keeps frontend usable when backend is down.
     return portfolioData;

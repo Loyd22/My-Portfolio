@@ -20,6 +20,7 @@ class Project(BaseModel):
     deploymentStatus: Literal["deployed", "not_deployed"]
     deploymentUrl: Optional[str] = None
     previewImage: Optional[str] = None
+    previewImages: Optional[List[str]] = None
 
 
 class StackGroup(BaseModel):

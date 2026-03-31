@@ -19,7 +19,15 @@ export function RightColumn({ data }: RightColumnProps) {
   const [selectedProject, setSelectedProject] = useState<PortfolioData["projects"][number] | null>(
     null
   );
+  const [selectedProjectImage, setSelectedProjectImage] = useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
   const previewProjects = data.projects.slice(0, 3);
+  const closeProjectDetails = () => {
+    setSelectedProject(null);
+    setSelectedProjectImage(null);
+  };
 
   return (
     <>
@@ -79,7 +87,10 @@ export function RightColumn({ data }: RightColumnProps) {
                 <button
                   key={project.title}
                   type="button"
-                  onClick={() => setSelectedProject(project)}
+                  onClick={() => {
+                    setSelectedProject(project);
+                    setSelectedProjectImage(null);
+                  }}
                   className="block w-full rounded-xl border border-[#20273914] bg-[#eef1f8] p-3 text-left transition hover:border-[#5b4ff03d]"
                 >
                   <div className="mb-1 flex items-start justify-between gap-2">
@@ -101,7 +112,7 @@ export function RightColumn({ data }: RightColumnProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[80] flex items-center justify-center bg-[#071022]/60 p-4 backdrop-blur-[2px]"
+            className="fixed inset-0 z-[80] overflow-y-auto bg-[#071022]/60 p-4 backdrop-blur-[2px] sm:p-6"
             onClick={() => setShowAllProjects(false)}
           >
             <motion.div
@@ -110,7 +121,7 @@ export function RightColumn({ data }: RightColumnProps) {
               exit={{ opacity: 0, y: 16, scale: 0.98 }}
               transition={{ duration: 0.18 }}
               onClick={(event) => event.stopPropagation()}
-              className="w-full max-w-2xl rounded-2xl border border-[#cfd8eb] bg-[#f6f8fc] p-4 shadow-[0_20px_45px_rgba(35,55,95,0.2)]"
+              className="mx-auto my-4 flex max-h-[calc(100dvh-2rem)] w-full max-w-2xl flex-col rounded-2xl border border-[#cfd8eb] bg-[#f6f8fc] p-4 shadow-[0_20px_45px_rgba(35,55,95,0.2)] sm:my-6"
             >
               <div className="mb-3 flex items-center justify-between">
                 <h3 className="text-sm font-extrabold uppercase tracking-[0.08em] text-[#1b2941]">
@@ -126,13 +137,14 @@ export function RightColumn({ data }: RightColumnProps) {
                 </button>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-3 overflow-y-auto pr-1 sm:grid-cols-2">
                 {data.projects.map((project) => (
                   <button
                     key={project.title}
                     type="button"
                     onClick={() => {
                       setSelectedProject(project);
+                      setSelectedProjectImage(null);
                       setShowAllProjects(false);
                     }}
                     className="rounded-xl border border-[#d3dced] bg-white p-3 text-left transition hover:border-[#91a7d6]"
@@ -208,7 +220,7 @@ export function RightColumn({ data }: RightColumnProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[82] flex items-center justify-center bg-[#071022]/62 p-4 backdrop-blur-[2px]"
-            onClick={() => setSelectedProject(null)}
+            onClick={closeProjectDetails}
           >
             <motion.article
               role="dialog"
@@ -225,7 +237,7 @@ export function RightColumn({ data }: RightColumnProps) {
                 <h3 className="text-lg font-extrabold text-[#0f1728]">{selectedProject.title}</h3>
                 <button
                   type="button"
-                  onClick={() => setSelectedProject(null)}
+                  onClick={closeProjectDetails}
                   className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-[#c7d2e5] bg-white text-[#334766]"
                   aria-label="Close project details"
                 >
@@ -268,14 +280,40 @@ export function RightColumn({ data }: RightColumnProps) {
               </div>
 
               {selectedProject.deploymentStatus === "not_deployed" ? (
-                <div className="mt-4 overflow-hidden rounded-xl border border-[#d1dcee] bg-white">
-                  <Image
-                    src={selectedProject.previewImage ?? "/gallery/work-4.svg"}
-                    alt={`${selectedProject.title} preview`}
-                    width={960}
-                    height={540}
-                    className="h-44 w-full object-cover"
-                  />
+                <div className="mt-4 overflow-hidden rounded-xl border border-[#d1dcee] bg-white p-2">
+                  <div
+                    className={`grid gap-2 ${
+                      selectedProject.previewImages && selectedProject.previewImages.length > 1
+                        ? "sm:grid-cols-2"
+                        : "grid-cols-1"
+                    }`}
+                  >
+                    {(selectedProject.previewImages?.length
+                      ? selectedProject.previewImages
+                      : [selectedProject.previewImage ?? "/gallery/work-4.svg"]
+                    ).map((imageSrc, imageIndex) => (
+                      <button
+                        key={`${selectedProject.title}-preview-${imageIndex}`}
+                        type="button"
+                        onClick={() =>
+                          setSelectedProjectImage({
+                            src: imageSrc,
+                            alt: `${selectedProject.title} preview ${imageIndex + 1}`
+                          })
+                        }
+                        aria-label={`Open full image: ${selectedProject.title} preview ${imageIndex + 1}`}
+                        className="block w-full cursor-zoom-in overflow-hidden rounded-lg"
+                      >
+                        <Image
+                          src={imageSrc}
+                          alt={`${selectedProject.title} preview ${imageIndex + 1}`}
+                          width={960}
+                          height={540}
+                          className="h-44 w-full object-cover transition duration-300 hover:scale-[1.02]"
+                        />
+                      </button>
+                    ))}
+                  </div>
                 </div>
               ) : null}
 
@@ -316,6 +354,49 @@ export function RightColumn({ data }: RightColumnProps) {
                 <p className="mt-1 text-sm leading-relaxed text-[#2e4568]">{selectedProject.impact}</p>
               </div>
             </motion.article>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {selectedProjectImage ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[84] flex items-center justify-center bg-[#071022]/62 p-4 backdrop-blur-[2px]"
+            onClick={() => setSelectedProjectImage(null)}
+          >
+            <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label={`${selectedProjectImage.alt} full image`}
+              initial={{ opacity: 0, y: 18, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 18, scale: 0.98 }}
+              transition={{ duration: 0.2 }}
+              onClick={(event) => event.stopPropagation()}
+              className="relative w-full max-w-5xl rounded-2xl border border-[#cad5ea] bg-[#f7f9fd] p-2 shadow-[0_24px_50px_rgba(35,55,95,0.25)]"
+            >
+              <button
+                type="button"
+                onClick={() => setSelectedProjectImage(null)}
+                className="absolute right-3 top-3 z-10 inline-flex h-8 w-8 items-center justify-center rounded-md border border-[#c7d2e5] bg-white text-[#334766]"
+                aria-label="Close image preview"
+              >
+                <X size={14} />
+              </button>
+
+              <div className="overflow-hidden rounded-xl border border-[#d1dcee] bg-white">
+                <Image
+                  src={selectedProjectImage.src}
+                  alt={selectedProjectImage.alt}
+                  width={1600}
+                  height={1000}
+                  className="max-h-[82vh] w-full object-contain"
+                />
+              </div>
+            </motion.div>
           </motion.div>
         ) : null}
       </AnimatePresence>
